@@ -58,6 +58,15 @@ https://github.com/ParrotSec/mimikatz/blob/master/x64/mimikatz.exe
 runas /netonly /user:INLANEFREIGHT\tpetty powershell
 
 
+run autoroute -s 172.16.6.3/16
+
+
+
+$sid = Convert-NameToSid username
+Get-DomainObjectACL -ResolveGUIDs -Identity * | ? {$_.SecurityIdentifier -eq $sid}
+
+
+
 
 
 
